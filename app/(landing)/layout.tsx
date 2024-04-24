@@ -1,41 +1,42 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import localFont from 'next/font/local'
+import "../globals.css";
+import localFont from "next/font/local";
+import { NavigationMenu } from "@/components/navbar";
 
 const font = localFont({
   src: [
     {
-      path: "./fonts/Ubuntu-Light.ttf",
+      path: "../fonts/Ubuntu-Light.ttf",
       weight: "300",
       style: "normal",
     },
     {
-      path: "./fonts/Ubuntu-LightItalic.ttf",
+      path: "../fonts/Ubuntu-LightItalic.ttf",
       weight: "300",
       style: "italic",
     },
     {
-      path: "./fonts/Ubuntu-Regular.ttf",
+      path: "../fonts/Ubuntu-Regular.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/Ubuntu-Italic.ttf",
+      path: "../fonts/Ubuntu-Italic.ttf",
       weight: "400",
       style: "italic",
     },
     {
-      path: "./fonts/Ubuntu-Medium.ttf",
+      path: "../fonts/Ubuntu-Medium.ttf",
       weight: "500",
       style: "normal",
     },
     {
-      path: "./fonts/Ubuntu-Bold.ttf",
+      path: "../fonts/Ubuntu-Bold.ttf",
       weight: "700",
       style: "normal",
     },
     {
-      path: "./fonts/Ubuntu-BoldItalic.ttf",
+      path: "../fonts/Ubuntu-BoldItalic.ttf",
       weight: "700",
       style: "italic",
     },
@@ -54,7 +55,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+        <NavigationMenu />
+        <section className="h-full w-full container mx-auto">
+          {children}
+        </section>
+      </body>
     </html>
   );
 }
